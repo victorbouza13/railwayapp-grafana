@@ -1,7 +1,7 @@
 ARG VERSION=latest
 
 # Usar una imagen base compatible, como Debian o Ubuntu
-FROM ubuntu:latest
+FROM debian:latest
 
 # Instalar las dependencias necesarias para Grafana
 RUN apt-get install -y git wget
