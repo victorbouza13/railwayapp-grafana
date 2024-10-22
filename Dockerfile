@@ -19,5 +19,3 @@ ENV \
 # Exponer el puerto por defecto de Grafana
 EXPOSE 3000
 
-# Correr el comando para iniciar Grafana
-CMD ["./bin/grafana-server", "--homepath=/grafana"]
