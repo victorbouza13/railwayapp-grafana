@@ -12,8 +12,6 @@ services:
       - GF_DEFAULT_INSTANCE_NAME=my-instance
       - GF_SECURITY_ADMIN_USER=owner
       - GF_LOG_MODE=console
-      - GF_SECURITY_ALLOW_EMBEDDING=true    # Permitir embebido
-      - GF_AUTH_ANONYMOUS_ENABLED=true      # Habilitar autenticación anónima
     ports:
       - 3000:3000
     volumes:
