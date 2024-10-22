@@ -1,10 +1,10 @@
 ARG VERSION=latest
 
 # Usar una imagen base compatible, como Debian o Ubuntu
-FROM debian:latest
+FROM ubuntu:latest
 
 # Instalar las dependencias necesarias para Grafana
-RUN apt-get update && apt-get install -y git wget
+#RUN apt-get update && apt-get install -y git wget
 
 # Clonar tu fork de Grafana
 RUN git clone https://github.com/victorbouza13/grafana.git /grafana
