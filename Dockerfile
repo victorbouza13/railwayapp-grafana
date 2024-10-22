@@ -1,6 +1,23 @@
 ARG VERSION=latest
 
-FROM grafana/grafana-oss:${VERSION}
+# Usar una imagen base compatible, como Debian o Ubuntu
+FROM debian:latest
 
+# Instalar las dependencias necesarias para Grafana
+RUN apt-get update && apt-get install -y git wget
+
+# Clonar tu fork de Grafana
+RUN git clone https://github.com/victorbouza13/grafana.git /grafana
+
+# Cambiar al directorio del código clonado y ejecutar los pasos de instalación de Grafana
+WORKDIR /grafana
+
+# Configurar las variables de entorno y plugins de Grafana
 ENV \
     GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel,grafana-clock-panel,grafana-simple-json-datasource
+
+# Exponer el puerto por defecto de Grafana
+EXPOSE 3000
+
+# Correr el comando para iniciar Grafana
+CMD ["./bin/grafana-server", "--homepath=/grafana"]
