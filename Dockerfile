@@ -4,7 +4,7 @@ ARG VERSION=latest
 FROM ubuntu:latest
 
 # Instalar las dependencias necesarias para Grafana
-#RUN apt-get update && apt-get install -y git wget
+RUN apt-get install -y git wget
 
 # Clonar tu fork de Grafana
 RUN git clone https://github.com/victorbouza13/grafana.git /grafana
